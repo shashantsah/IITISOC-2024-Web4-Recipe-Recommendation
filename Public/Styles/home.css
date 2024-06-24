@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    box-sizing: border-box;
+}
+body { 
+margin: 0;
+}
+.footer img{ 
+    width: 150px;
+    height: 150px;
+   
+}
+.header {
+padding: 20px 10px;
+background-image: url("/Images/istockphoto-1307964333-612x612.jpg");
+height: 200px;
+}
+.header a {
+float: left;
+background-color: #A0522D;
+color: rgb(255, 255, 255);
+text-align: center;
+padding: 10px;
+text-decoration: none;
+font-size: 15px; 
+border-radius: 10px;
+font-family: "Poppins", sans-serif;
+font-weight: 400;
+font-style: normal;
+margin: auto;
+}
+.header a:hover {
+color: white;
+background-color: black;
+}
+.links {
+float: right;
+gap: 10px;
+display: flex;
+}
+.one{
+display: block;
+background-color: beige;
+padding-bottom: 20px;
+}
+.images1,.variety{
+display: flex;
+}
+.images1{
+display: flex;
+gap:40px;
+overflow: auto;
+
+}
+form.example input{
+padding: 10px;
+font-size: 17px;
+border: 1px solid grey;
+float: left;
+width: 80%;
+background: #f1f1f1;
+}
+form.example button {
+float: left;
+width: 20%;
+padding: 10px;
+color: #A0522D;
+font-size: 17px;
+border: 1px solid grey;
+border-left: none;
+cursor: pointer;
+}
+form.example::after {
+content: "";
+clear: both;
+display: table;
+}
+#one{
+width: 400px;
+height: 500px;
+}
+.content{
+text-align: center;
+background-color: #A0522D;
+color: #f1f1f1;
+}
+#design{
+padding: 20px;
+font-family: Dancing Script, 'Arial Narrow', Arial, sans-serif;
+font-size: 30px;
+
+}
+#content{
+    background-color:#A0522D;
+    color: rgb(255, 255, 255);
+    width: fit-content;
+    padding: 10px;
+    margin-top: -20px;
+    position:relative;
+    left:35%;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+font-weight: 400;
+font-style: normal;
+border-radius: 10px;
+border: none;
+}
+#content:hover{
+    background-color: black;
+    color: white;
+} 
+#content2{
+    background-color:#A0522D;
+    color: rgb(255, 255, 255);
+    width: fit-content;
+    padding: 10px;
+   
+    position:relative;
+margin-left:-50%;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+font-weight: 400;
+font-style: normal;
+border-radius: 10px;
+border: none;
+}  
+#content2:hover{
+    background-color: black;
+    color: white;
+}
+a{
+text-decoration: none;
+}
+#two{
+border-radius: 50%;
+width: 100px;
+height: 100px;
+}
+.variety{
+margin-top: 20px;
+display: flex;
+justify-content: space-around;
+text-align: center;
+}
+.variety a{
+color: black;
+}
+
+td , li a{
+color:white;
+}
+td a:hover{
+color:#A0522D;
+}
+ul {
+list-style: none;
+}
+h1 {
+font-size: 50px;
+word-break: break-all;
+}
+
+.modal {
+margin: 8px -16px;
+background-color: #f1f1f1;
+padding: 20px;
+font-family: Arial;
+}
+.column {
+float: left;
+width: 25%;
+}
+.modal:after {
+content: "";
+display: table;
+clear: both;
+}
+.content2 {
+background-color: white;
+padding: 10px;
+}
+.footer ul{
+text-align: center;
+
+}
+.submit{
+    float: left;
+    background-color: #A0522D;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 15px; 
+    border-radius: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: auto;
+    border: none;
+    cursor: pointer;
+}
+
+.submit:hover{
+    background-color: black;
+    color: white;
+}
+
+.footer{
+    background-color: #A0522D;
+    margin-top:-10px;
+    margin-bottom:-20px;
+    padding-top: 15px;
+    
+}
+.footer li a:hover{
+    color:black;
+}
+span{
+    font-family: Dancing Script , 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: cadetblue;
+    font-size: 40px;
+}
+
+
+li input{
+    background-color: #A0522D;
+    border: none;
+    font-size: 15px;
+    color: #f1f1f1;
+    cursor: pointer;
+}
+ 
+li input:hover{
+    color: black;
+
+}
+
+
+

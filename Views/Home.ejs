@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Recommendation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+   <link rel="stylesheet" href="Styles/home.css">
+</head>
+<body>
+    <div class="container">
+       <div class="header">
+        <div class="logo"></div>
+        <div class="links">
+            <a href="">Home</a>
+            <form action="/wishlist" method="post">
+                <button type="submit" value="Wishlist" class="submit">Wishlist</button>
+            </form>
+            <form action="/cart" method="post">
+                <button type="submit" value="cart" class="submit">Shopping List</button>
+            </form>
+            <form class="example" action="/search" method="post">  
+                <input type="text" placeholder="Search for Recipes" name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+    </div> 
+</div>
+    <main>
+        <div class="content">
+        <p id="design">WHAT TO COOK TODAY</p>
+        </div>
+        <div class="one">
+        <div class="images1">
+          <form action="/allRecipes" method="post">
+            <img src="Images/AllRecipes.jpeg" alt="" id="one">
+           <input type="submit" name="getrecipe" value="All Recipes" id="content" class="c5"> 
+        </form>   
+           <form action="/GetRecipes" method="post">
+                <img src="Images/Food1.jpg" alt="" id="one">
+           <input type="submit" name="getrecipe" value="Quick And Easy"  id="content" class="c1" >      
+        </form>
+        <form action="/GetRecipes" method="post">
+                <img src="Images/Food2.jpg" alt="" id="one">
+              <input type="submit" name="getrecipe" value="Healthy" id="content" class="c2">  
+            </form>   
+            <form action="/GetRecipes" method="post">
+                <img src="Images/Food3.jpg" alt="" id="one">
+              <input type="submit"  name="getrecipe" value="5-Ingredients" id="content" class="c3"> 
+            </form>   
+            <form action="/GetRecipes" method="post">
+                <img src="Images/Food4.jpg" alt="" id="one">
+               <input type="submit" name="getrecipe" value="Pasta" id="content" class="c4"> 
+            </form>   
+            
+        </div>
+        <div class="variety">
+            <form action="/GetRecipes" method="post">
+                <img src="Images/Food1.jpg" alt="" id="two">
+                <input type="submit" name="getrecipe" value="Quick And Easy" id="content2">  
+            </form>   
+                <form action="/GetRecipes" method="post">
+                <img src="Images/Dinner.jpg" alt="" id="two">
+                <input type="submit" name="getrecipe" value="Dinner" id="content2"> 
+            </form>   
+                <form action="/GetRecipes" method="post">
+                <img src="Images/Vegetarian.jpg" alt="" id="two">
+                <input type="submit" name="getrecipe" value="Vegetarian" id="content2"> 
+            </form>   
+                <form action="/GetRecipes" method="post">
+                <img src="Images/Healthy.jpg" alt="" id="two">
+                <input type="submit" name="getrecipe" value="Heathy" id="content2"> 
+            </form>   
+                <form action="/GetRecipes" method="post">
+                <img src="Images/Instant.jpg" alt="" id="two">
+                <input type="submit" name="getrecipe" value="Instant" id="content2"> 
+            </form>   
+                <form action="/GetRecipes" method="post">
+                <img src="Images/Meal Prep.jpg" alt="" id="two">
+                <input type="submit" name="getrecipe" value="Meal Prep" id="content2"> 
+            </form>   
+                <form action="/GetRecipes" method="post">
+                <img src="Images/Salad.jpg" alt="" id="two">
+                <input type="submit" name="getrecipe" value="Salads" id="content2"> 
+            </form>   
+        </div>
+    </div>
+        
+        <div class="modal">
+            <h3 style="text-align: center;">SIMPLE RECIPES MADE FOR <span>real, actual, everyday life.</span></h3>
+                <div class="column">
+                   
+                  <div class="content2">
+                    <img src="Images/Meal-Prep-Pasta-with-Cauliflower.jpg" alt="" style="width:100%">
+                    <h3>MOST POPULAR RECIPES</h3>
+                    
+                    <p>BUTTER CHICKEN</p>
+                    <p>CHOLE</p>
+                    <p>CHICKEN BIRYANI</p>
+                    <p>SAMOSA</p>
+                 
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="content2">
+                  <img src="Images/Cauliflower-Black-Bean-Tostadas-4.jpg" alt="" style="width:100%">
+                    <h3>TOP RATED RECIPES</h3>
+                    <p>RAVIOLI</p>
+                    <p>SOBA NOODLES</p>
+                    <p>MEE GORENG</p>
+                    <p>LASAGNA</p>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="content2">
+                  <img src="Images/Meal Prep.jpg" alt="" style="width:100%">
+                    <h3>THE LATEST AND GREATEST</h3>
+                    <p>BLUEBERRY MATCHA LATTE</p>
+                    <p>AVOCADO CAESAR GREEN BEANS</p>
+                    <p>BEET AND BURRATA SALAD</p>
+                    <p>SALMON TACOS</p>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="content2">
+                  <img src="Images/Red-Curry-Chicken-Stir-Fry-10-225x225.jpg" alt="" style="width:100%">
+                    <h3>HEATHIEST RECIPES</h3>
+                    <p>BUTTER CHICKEN</p>
+                    <p>CHOLE</p>
+                    <p>CHICKEN BIRYANI</p>
+                    <p>SAMOSA</p>
+                  </div>
+                </div>
+            </div>    
+    </main>
+   
+    <div class="footer">
+      <ul>
+          <li><strong>FOOD & RECIPES</strong></li>
+          <li>
+            <form action="/GetRecipes" method="post">
+            <input type="submit" name="getrecipe" value="DINNER">
+          </form>
+        </li>
+          <li><form action="/GetRecipes" method="post">
+            <input type="submit" name="getrecipe" value="MOST POPULAR RECIPES">
+          </form></li>
+          <li><form action="/GetRecipes" method="post">
+            <input type="submit" name="getrecipe" value="5-INGREDIENTS">
+          </form></li>
+          <li><form action="/GetRecipes" method="post">
+            <input type="submit" name="getrecipe" value="QUICK AND EASY">
+          </form></li>
+          <li><form action="/GetRecipes" method="post">
+            <input type="submit" name="getrecipe" value="HEALTHY">
+          </form></li>
+          <li><form action="/GetRecipes" method="post">
+            <input type="submit" name="getrecipe" value="VEGETARIAN">
+          </form></li>
+          <li><form action="/GetRecipes" method="post">
+            <input type="submit" name="getrecipe" value="NON-VEGETARIAN">
+          </form></li>
+          <li><form action="/GetRecipes" method="post">
+            <input type="submit" name="getrecipe" value="SALADS">
+          </form></li>
+      </ul>
+      <p id="copyright">&copy;Copyright<%= new Date().getFullYear() %></p>
+  </div>
+  </div>
+  </body>
+  </html>
