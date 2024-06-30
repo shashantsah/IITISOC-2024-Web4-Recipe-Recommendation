@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{
+            
+            background-color: rgb(255, 213, 210);
+        }
+        .container{
+            background-color: white;
+            border: 3px solid black;
+            display: block;
+            text-align: center;
+            width: 40%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            padding: 10px;
+        }
+        .icon,h1,h2,h3,ul, p,i{
+            background-color: white;
+        } 
+       .fa{
+        font-size: 20px;
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <%= recipes.title %>
+        </h1>
+        <h2>Ingredients</h2>
+        <p> <%= recipes.ingredients %> </p>
+        <h3>---INSTRUCTIONS---</h3>
+        <p>
+           <%= recipes.instructions %>
+        </p>
+       
+        <div class="icon">      
+           <i class="fa fa-heart like-button" data-id="<%=recipes.id%>"style="color: <%= recipes.is_liked ? 'red' : 'black' %>;"></i>
+           <i onclick="shareToWhatsApp()" class="fa fa-whatsapp"></i>
+           <i onclick="shareToFacebook()" class="fa fa-facebook"></i>
+           <i onclick="shareToPinterest()" class="fa fa-pinterest-p"></i>
+           <i onclick="shareToEmail()" class="fa fa-envelope-o"></i>
+        </div>
+        <div class="icon" >
+          <button class="cart-button" type="submit" data-id="<%=recipes.id%>"><%= recipes.in_Cart ? 'Added To Cart':'Add To Cart' %></button>
+        </div>
+    </div>
+</body>
+ <script>
+    const recipeLink = window.location.href; 
+        const recipeTitle = document.title;
+        const recipeDescription = "Check out this amazing recipe!"; 
+        function shareToWhatsApp() {
+            const message = encodeURIComponent(`${recipeDescription} ${recipeLink}`);
+            const whatsappUrl = `https://api.whatsapp.com/send?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function shareToFacebook() {
+            const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(recipeLink)}`;
+            window.open(facebookUrl, '_blank');
+        }
+
+        function shareToEmail() {
+            const subject = encodeURIComponent(recipeTitle);
+            const body = encodeURIComponent(`${recipeDescription}\n\n${recipeLink}`);
+            const emailUrl = `mailto:?subject=${subject}&body=${body}`;
+            window.open(emailUrl, '_self');
+        }
+
+        function shareToPinterest() {
+            const pinterestUrl = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(recipeLink)}&description=${encodeURIComponent(recipeDescription)}`;
+            window.open(pinterestUrl, '_blank');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const likeButton = document.querySelector('.like-button');
+            likeButton.addEventListener('click', async () => {
+                const recipeId = likeButton.getAttribute('data-id');
+                const isLiked = likeButton.style.color === 'red';
+
+                const response = await fetch('/toggle_like', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ recipeId, isLiked })
+                });
+
+                if (response.ok) {
+                    if (isLiked) {
+                        likeButton.style.color = 'black';
+                    } else {
+                        likeButton.style.color = 'red';
+                    }
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const cartButton = document.querySelector('.cart-button');
+            cartButton.addEventListener('click', async () => {
+                const recipeId = cartButton.getAttribute('data-id');
+                const inCart = cartButton.innerText === 'Added To Cart';
+
+                const response = await fetch('/addToCart', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ recipeId, inCart })
+                });
+
+                if (response.ok) {
+                    if (inCart) {
+                        cartButton.innerText = 'Add To Cart';
+                    } else {
+                        cartButton.innerText = 'Added To Cart';
+                    }
+                }
+            });
+        });
+       
+ </script>
+</html>
